@@ -3,50 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的作品集</title>
+    <title>Tang Hao · 作品集</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 600px;
-            margin: 80px auto;
-            padding: 0 20px;
-            background-color: #fafafa;
-            color: #333;
-            line-height: 1.8;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
         }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 0.2em;
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
         }
-        .subtitle {
-            color: #666;
+
+        /* 头部 */
+        header {
+            margin-bottom: 60px;
+        }
+        header h1 {
+            font-size: 2.4em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        header .role {
             font-size: 1.1em;
-            margin-bottom: 2em;
+            color: #666;
+            margin-top: 8px;
         }
-        a {
-            color: #0070f3;
+        header .bio {
+            margin-top: 16px;
+            color: #444;
+            max-width: 500px;
+        }
+
+        /* 作品网格 */
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1a1a1a;
+            display: inline-block;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        .project-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.2s ease;
             text-decoration: none;
+            color: inherit;
+            display: block;
         }
-        a:hover {
+        .project-card:hover {
+            border-color: #1a1a1a;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .project-card h3 {
+            font-size: 1.1em;
+            margin-bottom: 6px;
+        }
+        .project-card .desc {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .project-card .tag {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.75em;
+            background: #f3f3f3;
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #555;
+        }
+
+        /* 联系 */
+        .contact p {
+            margin-bottom: 6px;
+        }
+        .contact a {
+            color: #1a1a1a;
             text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .contact a:hover {
+            color: #555;
+        }
+
+        /* 页脚 */
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 0.85em;
+            color: #999;
+        }
+
+        /* 响应式：手机上看一列 */
+        @media (max-width: 600px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>👋 你好，我是 [tanghao]</h1>
-    <p class="subtitle">正在学习搭建自己的作品集网站</p>
+    <div class="container">
 
-    <h2>📁 我的项目</h2>
-    <ul>
-        <li><a href="#">项目一：个人博客首页设计</a></li>
-        <li><a href="#">项目二：一个简单的待办事项页面</a></li>
-        <li><a href="#">项目三：产品登录页设计</a></li>
-    </ul>
+        <!-- 头部介绍 -->
+        <header>
+            <h1>👋 你好，我是唐浩</h1>
+            <p class="role">产品设计师 / 前端学习者</p>
+            <p class="bio">
+                我对界面设计和用户体验充满热情，正在学习将想法转化为真实的网页。
+                这里是我练习和成长的一些记录。
+            </p>
+        </header>
 
-    <h2>📬 联系方式</h2>
-    <p>邮箱：<a href="mailto:yourname@example.com">yourname@example.com</a></p>
-    <p>GitHub：<a href="https://github.com/th0324">th0324</a></p>
+        <!-- 作品展示 -->
+        <h2 class="section-title">📁 我的项目</h2>
+        <div class="projects">
+            <a href="#" class="project-card">
+                <h3>个人博客首页设计</h3>
+                <p class="desc">一个干净、响应式的博客首页，支持深色模式切换。</p>
+                <span class="tag">HTML · CSS</span>
+            </a>
+            <a href="#" class="project-card">
+                <h3>待办事项页面</h3>
+                <p class="desc">简洁的任务管理界面，支持添加和勾选完成。</p>
+                <span class="tag">HTML · CSS</span>
+            </a>
+            <a href="#" class="project-card">
+                <h3>产品登录页设计</h3>
+                <p class="desc">一个 SaaS 产品的介绍和注册引导页面。</p>
+                <span class="tag">即将学习</span>
+            </a>
+            <a href="#" class="project-card">
+                <h3>更多项目</h3>
+                <p class="desc">正在学习 JavaScript，准备添加更多互动作品。</p>
+                <span class="tag">Coming Soon</span>
+            </a>
+        </div>
 
-    <p style="margin-top: 3em; color: #999; font-size: 0.9em;">🚀 由我自己用 HTML 和 CSS 亲手搭建</p>
+        <!-- 联系方式 -->
+        <h2 class="section-title">📬 联系</h2>
+        <div class="contact">
+            <p>📧 邮箱：<a href="mailto:yourname@example.com">yourname@example.com</a></p>
+            <p>💻 GitHub：<a href="https://github.com/th0324" target="_blank">th0324</a></p>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>🚀 由我自己用 HTML 和 CSS 亲手搭建</p>
+        </footer>
+
+    </div>
 </body>
 </html>
